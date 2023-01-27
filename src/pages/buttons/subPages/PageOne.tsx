@@ -3,10 +3,11 @@ import Carousel from '@UICOMPONENTS/containers/Carousel';
 import Content from '@UICOMPONENTS/containers/Content';
 import Header from '@UICOMPONENTS/containers/Header';
 import Modal from '@UICOMPONENTS/containers/Modal';
+import Page from '@UICOMPONENTS/containers/PageLeft';
 import Button from '@UICOMPONENTS/inputs/Button';
 import { useState } from 'react';
 
-const SubPageOne = ({ currentSubpage, setCurrentSubpage }: any) => {
+const PageOne = ({ currentSubpage, setCurrentSubpage }: any) => {
 	const [modalState, setModalState] = useState(false);
 
 	const header = (
@@ -19,7 +20,7 @@ const SubPageOne = ({ currentSubpage, setCurrentSubpage }: any) => {
 				// 	}}
 				// >
 				// 	Back
-				// </div>
+				// </div> 
 			}
 			title={'Buttons'}
 			headerRight={''}
@@ -35,8 +36,11 @@ const SubPageOne = ({ currentSubpage, setCurrentSubpage }: any) => {
 						content: (
 							<>
 								<div className={`p-8`}>
+									<div className="m-8">
+
+									</div>
 									<Button
-										longPressAction={() => setModalState(true)}
+										longPressAction={() =>  (true)}
 										color="primary"
 									>
 										Primary
@@ -166,4 +170,4 @@ const SubPageOne = ({ currentSubpage, setCurrentSubpage }: any) => {
 	);
 };
 
-export default SubPageOne;
+export default PageOne;

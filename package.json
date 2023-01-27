@@ -12,6 +12,7 @@
     "DEPLOY": "bash deploy.sh $(grep -Po '^VITE_APP_NAME=\\K.*' .env  )"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "formik": "^2.2.9",
     "pwa-asset-generator": "^6.2.1",
     "react": "^18.2.0",
