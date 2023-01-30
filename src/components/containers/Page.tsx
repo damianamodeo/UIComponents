@@ -1,13 +1,16 @@
 import Subpage from '@UICOMPONENTS/containers/Subpage';
+import { AnimatePresence } from 'framer-motion';
 import { ElementType, useState } from 'react';
 
 type PageType = {
-	subPages: ElementType[];
+	subPages: any;
 	currentPage?: Boolean;
 };
 
 const Page = ({ subPages, currentPage }: PageType) => {
-	const [currentSubpage, setCurrentSubpage] = useState(0);
+	const [[currentSubpage, direction], setCurrentSubpage] = useState<
+		[number, 'forward' | 'back']
+	>([0, 'forward']);
 
 	return (
 		<div
@@ -19,6 +22,7 @@ const Page = ({ subPages, currentPage }: PageType) => {
 				<Subpage
 					subPage={subPages[currentSubpage]}
 					currentSubpage={currentSubpage}
+					direction={direction}
 					setCurrentSubpage={setCurrentSubpage}
 				/>
 			}

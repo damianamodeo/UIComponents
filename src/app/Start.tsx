@@ -19,7 +19,7 @@ const Start = () => {
 	};
 
 	const [currentPage, setCurrentPage] = useState<number>(0);
-	const pages = [ButtonsPage, IconsPage];
+	const pages = [ButtonsPage, ButtonsPage];
 	const navbarItems = [HomeNavbarItem, SettingsNavbarItem];
 
 	return (

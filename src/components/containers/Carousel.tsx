@@ -23,6 +23,8 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 		return useRef(document.createElement('div'));
 	});
 
+	
+
 	const [active, setActive] = useState(
 		carouselItems.map(() => {
 			return false;

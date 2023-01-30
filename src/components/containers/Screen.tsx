@@ -1,8 +1,8 @@
-import Page from '@UICOMPONENTS/containers/Page';
+import Page from '@UICOMPONENTS/containers/Page copy';
 import { ComponentType, ReactNode } from 'react';
 
 type ScreenType = {
-	pages: ComponentType[][];
+	pages: any;
 	currentPage: number;
 	navbar: ReactNode;
 };

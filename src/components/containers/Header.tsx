@@ -4,9 +4,10 @@ type HeaderType = {
 	headerLeft?: ReactNode | string;
 	title: ReactNode | string;
 	headerRight?: ReactNode | string;
+	setPageToShow?: any
 };
 
-const Header = ({ headerLeft, title, headerRight }: HeaderType) => {
+const Header = ({ headerLeft, title, headerRight, setPageToShow }: HeaderType) => {
 	return (
 		<div>
 			<div className="flex place-items-center h-12 bg-lightGrey-300 dark:bg-darkGrey-700 border border-x-0 border-t-0 border-b-[.75px] border-y-lightGrey-500 dark:border-y-darkGrey-500">

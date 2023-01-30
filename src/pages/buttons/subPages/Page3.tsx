@@ -3,44 +3,87 @@ import Carousel from '@UICOMPONENTS/containers/Carousel';
 import Content from '@UICOMPONENTS/containers/Content';
 import Header from '@UICOMPONENTS/containers/Header';
 import Modal from '@UICOMPONENTS/containers/Modal';
-import Button from '@UICOMPONENTS/inputs/ButtonSimple';
+import Page from '@UICOMPONENTS/containers/PageTransitionGroup';
+import Button from '@UICOMPONENTS/inputs/Button';
 import { useState } from 'react';
 
-const SubPageTwo = ({ currentSubpage, setCurrentSubpage }: any) => {
-	const [modalState, setModalState] = useState(false);
-
-	const header = (
+const header = () => {
+	return (
 		<Header
-		headerLeft={<div onClick={()=>{setCurrentSubpage(0)}}>xxx</div>}
-		title={'Index'}
-			headerRight={'>'}
+			headerLeft={
+				null
+				// <div
+				// 	onClick={() => {
+				// 		setCurrentSubpage(1);
+				// 	}}
+				// >
+				// 	Back
+				// </div>
+			}
+			title={'Buttons'}
+			headerRight={''}
 		></Header>
 	);
+};
 
-	const content = (
+const content2 = ({ setCurrentSubpage }: any) => {
+	const [modalState, setModalState] = useState(false);
+
+	return (
 		<Content>
-
-SubPageTwo
-			{/* <Carousel
+			<Carousel
 				carouselItems={[
 					{
-						title: 'Buttons',
+						title: 'Styles',
 						content: (
-							<div className={`p-8`}>
-								<Button
-									action={() => setModalState(true)}
-									color="primary"
-								>
-									Open a Modal Window
-								</Button>
-								{modalState ? (
-									<Modal hide={() => setModalState(false)}></Modal>
-								) : null}
-							</div>
+							<>
+								<div className={`p-8`}>
+									1<div className="m-8"></div>
+									<Button
+										clickAction={() => setCurrentSubpage(0, -1)}
+										color="primary"
+									>
+										Back to Page Two
+									</Button>
+								</div>
+								<div className={`p-8`}>
+									<Button
+										clickAction={() => setCurrentSubpage(0, 1)}
+										color="secondary"
+									>
+										Forward to Page One
+									</Button>
+								</div>
+								<div className={`p-8`}>
+									<Button
+										clickAction={() => setModalState(true)}
+										color="warning"
+									>
+										Show Modal
+									</Button>
+									{modalState ? (
+										<Modal>
+											<div>
+												You just clicked a Warning colored button!
+												<br />
+												<br />
+												Click{' '}
+												<span
+													className="hover:text-red-500"
+													onClick={() => setModalState(false)}
+												>
+													HERE
+												</span>{' '}
+												to close it
+											</div>
+										</Modal>
+									) : null}
+								</div>
+							</>
 						),
 					},
 					{
-						title: 'Inputs',
+						title: 'Long Press',
 						content: <Inputs></Inputs>,
 					},
 					{
@@ -102,16 +145,10 @@ SubPageTwo
 						),
 					},
 				]}
-			></Carousel> */}
+			></Carousel>
 		</Content>
 	);
-	return (
-		<>
-			{header}
-			{content}
-			
-		</>
-	);
 };
+const pageThree = { header, content2 };
 
-export default SubPageTwo;
+export default pageThree;
