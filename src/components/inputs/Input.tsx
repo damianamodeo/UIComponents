@@ -2,10 +2,10 @@ import Text from './Text';
 import TextArea from './TextArea';
 import Number from './Number';
 import Email from './Email';
-import Select from '@UICOMPONENTS/inputs/Select';
-import Radio from '@UICOMPONENTS/inputs/Radio';
-import Checkbox from '@UICOMPONENTS/inputs/Checkbox';
-import Switch from '@UICOMPONENTS/inputs/Switch';
+import Select from './Select';
+import Radio from './Radio';
+import Checkbox from './Checkbox';
+import Switch from './Switch';
 
 type InputType = {
 	inputType: 'text' | 'number' | 'email' | 'textarea' | 'select' | 'radio' | 'checkbox' | 'switch' ;
