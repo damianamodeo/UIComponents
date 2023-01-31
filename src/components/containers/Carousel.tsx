@@ -1,5 +1,5 @@
 import Container from '@UICOMPONENTS/containers/Container';
-import { ReactNode, useEffect, useRef, useState, useLayoutEffect } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 type carouselItemsType = {
 	title: string;
