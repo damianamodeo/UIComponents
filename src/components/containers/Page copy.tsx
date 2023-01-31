@@ -6,7 +6,7 @@ import { ElementType, useState } from 'react';
 const variants = {
 	enter: (direction: number) => {
 		return {
-			x: direction > 0 ? 1000 : -1000,
+			x: direction > 0 ? "100%" : "-100%",
 		};
 	},
 	center: {
@@ -17,7 +17,7 @@ const variants = {
 	exit: (direction: number) => {
 		return {
 			zIndex: 0,
-			x: direction < 0 ? 1000 : -1000,
+			x: direction < 0 ? "100%" : "-100%",
 		};
 	},
 };
@@ -43,7 +43,7 @@ const Page = ({ subPages, currentPage }: PageType) => {
 
 	return (
 		<>
-			<div className={`grow flex flex-col overflow-auto bg-white 	${currentPage ? null : 'hidden'}`}>
+			<div className={`grow flex flex-col overflow-auto bg-white ${currentPage ? null : 'hidden'}`}>
 				<Header setCurrentSubpage={setCurrentSubpage} />
 				<AnimatePresence
 					initial={false}
@@ -51,7 +51,7 @@ const Page = ({ subPages, currentPage }: PageType) => {
 					custom={direction}
 				>
 					<motion.div
-						className={`grow flex flex-col overflow-auto dark:bg-black
+						className={`grow flex flex-col overflow-auto  dark:bg-black
 			`}
 						key={page}
 						custom={direction}
@@ -60,7 +60,7 @@ const Page = ({ subPages, currentPage }: PageType) => {
 						animate="center"
 						exit="exit"
 						transition={{
-							x: { type: 'tween', duration: .5 },
+							x: { type: 'tween', duration: .2 },
 							opacity: { duration: 0.2 },
 						}}
 					>
