@@ -2,7 +2,7 @@ import Inputs from '@PAGES/Inputs';
 import Carousel from '@UICOMPONENTS/containers/Carousel';
 import Content from '@UICOMPONENTS/containers/Content';
 import Header from '@UICOMPONENTS/containers/Header';
-import Page from '@UICOMPONENTS/containers/Page';
+import Page from '@UICOMPONENTS/containers/Page old';
 
 const TestPage = ({ children, active }: any) => {
 	const header = (

@@ -1,6 +1,26 @@
 import Subpage from '@UICOMPONENTS/containers/Subpage';
-import { AnimatePresence } from 'framer-motion';
+import Button from '@UICOMPONENTS/inputs/Button';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ElementType, useState } from 'react';
+
+const variants = {
+	enter: (direction: number) => {
+		return {
+			x: direction > 0 ? "100%" : "-100%",
+		};
+	},
+	center: {
+		zIndex: 1,
+		x: 0,
+		opacity: 1,
+	},
+	exit: (direction: number) => {
+		return {
+			zIndex: 0,
+			x: direction < 0 ? "100%" : "-100%",
+		};
+	},
+};
 
 type PageType = {
 	subPages: any;
@@ -8,25 +28,50 @@ type PageType = {
 };
 
 const Page = ({ subPages, currentPage }: PageType) => {
-	const [[currentSubpage, direction], setCurrentSubpage] = useState<
-		[number, 'forward' | 'back']
-	>([0, 'forward']);
+	const [page,  setPage] = useState<number>();
+	const [ direction, setDirection] = useState<number>();
+
+	const setCurrentSubpage = (newPage: number, direction: number) => {
+		setPage(newPage);
+		setDirection(direction);
+	};
+
+	const Header = subPages[!page ? 0 : page].header;
+	const Content = subPages[!page ? 0 : page].content2;
+
+	const content = 3;
 
 	return (
-		<div
-			className={`${
-				currentPage ? null : 'hidden'
-			} grow flex flex-col overflow-auto bg-white dark:bg-black`}
-		>
-			{
-				<Subpage
-					subPage={subPages[currentSubpage]}
-					currentSubpage={currentSubpage}
-					direction={direction}
-					setCurrentSubpage={setCurrentSubpage}
-				/>
-			}
-		</div>
+		<>
+			<div className={`grow flex flex-col overflow-auto bg-white ${currentPage ? null : 'hidden'}`}>
+				<Header setCurrentSubpage={setCurrentSubpage} />
+				<AnimatePresence
+					initial={false}
+					mode="popLayout"
+					custom={direction}
+				>
+					<motion.div
+						className={`grow flex flex-col overflow-auto  dark:bg-black
+			`}
+						key={page}
+						custom={direction}
+						variants={variants}
+						initial="enter"
+						animate="center"
+						exit="exit"
+						transition={{
+							x: { type: 'tween', duration: .2 },
+							opacity: { duration: 0.2 },
+						}}
+					>
+						<Content
+							currentSubpage={page}
+							setCurrentSubpage={setCurrentSubpage}
+						/>
+					</motion.div>
+				</AnimatePresence>
+			</div>
+		</>
 	);
 };
 

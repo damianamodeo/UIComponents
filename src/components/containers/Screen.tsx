@@ -1,4 +1,4 @@
-import Page from '@UICOMPONENTS/containers/Page copy';
+import Page from '@UICOMPONENTS/containers/Page';
 import { ComponentType, ReactNode } from 'react';
 
 type ScreenType = {
