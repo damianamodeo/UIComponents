@@ -1,10 +1,9 @@
-import Inputs from '@PAGES/Inputs';
-import Carousel from '@UICOMPONENTS/containers/Carousel';
-import Content from '@UICOMPONENTS/containers/Content';
-import Header from '@UICOMPONENTS/containers/Header';
-import Modal from '@UICOMPONENTS/containers/Modal';
-import Page from '@UICOMPONENTS/containers/PageTransitionGroup';
-import Button from '@UICOMPONENTS/inputs/Button';
+import Inputs from '../../Inputs';
+import Carousel from '../../../components/containers/Carousel';
+import Content from '../../../components/containers/Content';
+import Header from '../../../components/containers/Header';
+import Modal from '../../../components/containers/Modal';
+import Button from '../../../components/inputs/Button';
 import { useState } from 'react';
 
 const header = () => {
