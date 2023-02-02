@@ -3,9 +3,8 @@ import { useLongPress } from './useLongPress';
 
 type ButtonType = {
 	children: string;
-	clickAction?: () => void;
-	longPressAction?: () => void;
-	submit?: Boolean;
+	clickAction?: any;
+	longPressAction?: any;
 	color:
 		| 'primary'
 		| 'secondary'
@@ -22,7 +21,6 @@ const Button = ({
 	longPressAction,
 	children,
 	color,
-	submit,
 	delay,
 }: ButtonType) => {
 	const submitRef = useRef(document.createElement('button'));
@@ -36,7 +34,7 @@ const Button = ({
 	};
 
 	const onLongPress = () => {
-		if (submit) {
+		if (longPressAction === "submit") {
 			submitRef.current.click();
 			return;
 		}
@@ -47,6 +45,10 @@ const Button = ({
 	};
 
 	const onClick = () => {
+		if (clickAction === "submit") {
+			submitRef.current.click();
+			return;
+		}
 		if (clickAction) {
 			clickAction();
 			return;

@@ -9,7 +9,7 @@ import Checkbox from './Checkbox';
 import Switch from './Switch';
 
 type InputType = {
-	inputType: 'text' | 'number' | 'email' |  "password" | 'textarea' | 'select' | 'radio' | 'checkbox' | 'switch' ;
+	inputType: 'text' | 'number' | 'email' |  'password' | 'textarea' | 'select' | 'radio' | 'checkbox' | 'switch' ;
 	label: string;
 	name: string;
 	placeholder?: string;
