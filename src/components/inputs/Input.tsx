@@ -1,4 +1,5 @@
 import Text from './Text';
+import Password from './Password';
 import TextArea from './TextArea';
 import Number from './Number';
 import Email from './Email';
@@ -18,6 +19,7 @@ type InputType = {
 const Input = ({ inputType, ...rest }: InputType) => {
 	const input: any = {
 		text: <Text {...rest} />,
+		password: <Password {...rest} />,
 		number: <Number {...rest} />,
 		email: <Email {...rest} />,
 		textarea: <TextArea {...rest} />,
