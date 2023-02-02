@@ -11,8 +11,7 @@ type ButtonType = {
 		| 'grey'
 		| 'error'
 		| 'warning'
-		| 'success'
-		| any;
+		| 'success';
 	delay?: number;
 };
 

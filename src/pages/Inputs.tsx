@@ -112,9 +112,7 @@ const Inputs = ({ children }: InputsType) => {
 
 				<div className="m-8">
 					<Button
-						submit
 						color="secondary"
-						delay={500}
 					>
 						LongPress Button
 					</Button>
