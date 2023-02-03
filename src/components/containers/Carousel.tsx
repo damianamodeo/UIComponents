@@ -23,8 +23,6 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 		return useRef(document.createElement('div'));
 	});
 
-	
-
 	const [active, setActive] = useState(
 		carouselItems.map(() => {
 			return false;
@@ -75,33 +73,35 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 
 	return (
 		<>
-			<div
-				className={`hideScollbar tabbar relative flex bg-white dark:bg-darkGrey-1000 w-max min-w-full
-				overflow-x-auto overflow-y-hidden border border-x-0 border-t-0 border-b-[1.25px] border-y-lightGrey-500 dark:border-y-darkGrey-500`}
-			>
-				{carouselItems.map((item: any, key: number) => {
-					return (
-						<div
-							key={key}
-							ref={tabRefs[key]}
-							onClick={(e) => handleClick(e, key)}
-							className={`uppercase mx-3 ${
-								active[key]
-									? 'font-extrabold text-secondary-500 dark:text-secondary-200'
-									: ''
-							}`}
-						>
-							<div className="my-2">{item.title}</div>
-							<div className="-z-1 h-0 font-extrabold invisible">
-								{item.title}
-							</div>
-						</div>
-					);
-				})}
+			<div className="overflow-x-auto">
 				<div
-					className="absolute left-0 bottom-0 h-[2px] bg-secondary-500 dark:bg-secondary-200 transition-all duration-300"
-					ref={markerRef}
-				></div>
+					className={`hideScollbar tabbar relative flex bg-white dark:bg-darkGrey-1000 
+				overflow-x-auto-xx overflow-y-hidden border border-x-0 border-t-0 border-b-[1.25px] border-y-lightGrey-500 dark:border-y-darkGrey-500`}
+				>
+					{carouselItems.map((item: any, key: number) => {
+						return (
+							<div
+								key={key}
+								ref={tabRefs[key]}
+								onClick={(e) => handleClick(e, key)}
+								className={`uppercase mx-3 ${
+									active[key]
+										? 'font-extrabold text-secondary-500 dark:text-secondary-200'
+										: ''
+								}`}
+							>
+								<div className="my-2">{item.title}</div>
+								<div className="-z-1 h-0 font-extrabold invisible">
+									{item.title}
+								</div>
+							</div>
+						);
+					})}
+					<div
+						className="absolute left-0 bottom-0 h-[2px] bg-secondary-500 dark:bg-secondary-200 transition-all duration-300"
+						ref={markerRef}
+					></div>
+				</div>
 			</div>
 
 			<Container>
