@@ -111,7 +111,7 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 							<div
 								key={key}
 								ref={contentRefs[key]}
-								className={`snap-start overflow-y-auto h-full overscroll-x-none`}
+								className={`snap-start overflow-y-auto h-full overflow-x-hidden`}
 							>
 								{item.content}
 							</div>
