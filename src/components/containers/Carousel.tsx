@@ -76,7 +76,7 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 	return (
 		<>
 			<div
-				className={`hideScollbar tabbar relative flex bg-white dark:bg-darkGrey-1000 
+				className={`hideScollbar tabbar relative flex bg-white dark:bg-darkGrey-1000 w-max min-w-full
 				overflow-x-auto overflow-y-hidden border border-x-0 border-t-0 border-b-[1.25px] border-y-lightGrey-500 dark:border-y-darkGrey-500`}
 			>
 				{carouselItems.map((item: any, key: number) => {
