@@ -104,7 +104,7 @@ const Carousel = ({ carouselItems }: CarouselType) => {
 
 			<Container>
 				<div
-					className={`hideScollbar h-full pb-2-xx grid grid-flow-col auto-cols-[100%] overflow-x-auto snap-x snap-mandatory snap-always overflow-y-auto `}
+					className={`hideScollbar h-full pb-2-xx grid grid-flow-col auto-cols-[100%] overflow-x-auto-xxx snap-x snap-mandatory snap-always overflow-y-auto `}
 				>
 					{carouselItems.map((item: any, key: number) => {
 						return (
