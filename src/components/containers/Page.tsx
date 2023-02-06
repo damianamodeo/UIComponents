@@ -36,8 +36,8 @@ const Page = ({ subPages, currentPage }: PageType) => {
 		setDirection(direction);
 	};
 
-	const Header = subPages[!page ? 0 : page].header;
-	const Content = subPages[!page ? 0 : page].content2;
+	const Header = subPages[!page ? 0 : page].headerComponent;
+	const Content = subPages[!page ? 0 : page].contentComponent;
 
 	const content = 3;
 
