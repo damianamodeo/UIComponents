@@ -6,7 +6,7 @@ type ContainerType = {
 
 const Container = ({ children }: ContainerType) => {
   return (
-    <div className={`overflow-auto-xxx h-full overscroll-x-contain`}>
+    <div className={`overflow-y-auto h-full overscroll-x-contain`}>
       {children}
     </div>
   )
