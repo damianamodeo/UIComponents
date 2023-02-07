@@ -14,7 +14,7 @@ type InputType = {
 	label: string;
 	name: string;
 	placeholder?: string;
-	options?: { key: string; value: string | number }[];
+	options?: { key: string | number; value: string | number }[];
 };
 
 const Input = ({ inputType, ...rest }: InputType) => {
