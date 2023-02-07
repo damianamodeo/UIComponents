@@ -26,6 +26,7 @@ const Autocomplete = ({ label, name, options, ...rest }: TextType) => {
 								className={style.input}
 								placeholder=" "
                 list="options"
+                autoComplete='off'
 							/>
 							<label
 								htmlFor={label}
