@@ -8,7 +8,7 @@ type TextType = {
 	options?: any;
 };
 
-const Text = ({ label, name, options, ...rest }: TextType) => {
+const Autocomplete = ({ label, name, options, ...rest }: TextType) => {
 	return (
 		<Field
 			className={style.input}
@@ -53,4 +53,4 @@ const Text = ({ label, name, options, ...rest }: TextType) => {
 	);
 };
 
-export default Text;
+export default Autocomplete;
