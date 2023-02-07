@@ -5,11 +5,11 @@ import style from './style';
 type TextType = {
 	label: string;
 	name: string;
+	options?: any;
 };
 
-const Text = ({ label, name, ...rest }: TextType) => {
+const Text = ({ label, name, options, ...rest }: TextType) => {
 	return (
-
 		<Field
 			className={style.input}
 			name={name}
@@ -24,8 +24,8 @@ const Text = ({ label, name, ...rest }: TextType) => {
 								value={field.value}
 								{...field}
 								className={style.input}
-								placeholder=""
-                autoComplete='off'
+								placeholder=" "
+                list="options"
 							/>
 							<label
 								htmlFor={label}
@@ -33,6 +33,18 @@ const Text = ({ label, name, ...rest }: TextType) => {
 							>
 								{label}
 							</label>
+							<datalist id="options">
+								{options.map((option: any, index: number) => {
+									return (
+										<option
+											key={index}
+											value={option.value}
+										>
+											{option.key}
+										</option>
+									);
+								})}
+							</datalist>
 						</div>
 					</>
 				);
