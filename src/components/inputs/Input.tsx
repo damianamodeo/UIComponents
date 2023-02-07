@@ -7,9 +7,10 @@ import Select from './Select';
 import Radio from './Radio';
 import Checkbox from './Checkbox';
 import Switch from './Switch';
+import Autocomplete from '@UICOMPONENTS/inputs/Autocomplete';
 
 type InputType = {
-	inputType: 'text' | 'number' | 'email' |  'password' | 'textarea' | 'select' | 'radio' | 'checkbox' | 'switch' ;
+	inputType: 'text' | 'number' | 'email' |  'password' | 'textarea' | 'select' | 'autocomplete' | 'radio' | 'checkbox' | 'switch' ;
 	label: string;
 	name: string;
 	placeholder?: string;
@@ -24,6 +25,7 @@ const Input = ({ inputType, ...rest }: InputType) => {
 		email: <Email {...rest} />,
 		textarea: <TextArea {...rest} />,
 		select: <Select {...rest} />,
+		autocomplete: <Autocomplete {...rest} />,
 		radio: <Radio {...rest} />,
 		checkbox: <Checkbox {...rest} />,
 		switch: <Switch {...rest} />,
