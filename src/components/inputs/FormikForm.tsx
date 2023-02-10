@@ -7,8 +7,9 @@ type FormikFormType = {
 	initialValues: any;
 	onSubmit: any;
 	validationSchema?: any;
-	validateOnChange?: Boolean
-	validateOnBlur?: Boolean
+	validateOnChange?: Boolean;
+	validateOnBlur?: Boolean;
+	onChange?: any;
 };
 
 const FormikForm = ({
@@ -17,7 +18,8 @@ const FormikForm = ({
 	onSubmit,
 	validationSchema,
 	validateOnChange,
-	validateOnBlur
+	validateOnBlur,
+	onChange,
 }: FormikFormType) => {
 	return (
 		<div className={``}>
@@ -25,9 +27,10 @@ const FormikForm = ({
 				initialValues={initialValues}
 				onSubmit={onSubmit}
 				validationSchema={validationSchema}
-				validateOnChange={!validateOnChange} validateOnBlur={!validateOnBlur}
+				validateOnChange={!validateOnChange}
+				validateOnBlur={!validateOnBlur} 
 			>
-				{(formik) => <Form>{children}</Form>}
+				{(formik) => <Form onChange={e=>onChange(e)}>{children}</Form>}
 			</Formik>
 		</div>
 	);
