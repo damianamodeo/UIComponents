@@ -19,7 +19,7 @@ const Number = ({ label, name, ...rest }: TextType) => {
 					<>
 						<div className="relative z-0">
 							<input
-								type="tel"
+								type="text"
 								value={field.value}
 								{...field}
 								className={style.input}
