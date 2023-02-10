@@ -2,7 +2,7 @@ import Content from '@UICOMPONENTS/containers/Content';
 import Header from '@UICOMPONENTS/containers/Header';
 import Button from '@UICOMPONENTS/inputs/Button';
 
-const header = () => {
+const headerComponent = () => {
 	return (
 		<Header
 			headerLeft="Left 1"
@@ -12,7 +12,7 @@ const header = () => {
 	);
 };
 
-const content2 = ({ setCurrentSubpage }: any) => {
+const contentComponent = ({ setCurrentSubpage }: any) => {
 	return (
 		<Content>
 			This is Page One content
@@ -36,6 +36,6 @@ const content2 = ({ setCurrentSubpage }: any) => {
 	);
 };
 
-const pageOne = { header, content2 };
+const pageOne = { headerComponent, contentComponent };
 
 export default pageOne;

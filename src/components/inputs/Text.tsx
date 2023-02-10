@@ -7,9 +7,8 @@ type TextType = {
 	name: string;
 };
 
-const Text = ({ label, name, ...rest }: TextType) => {
+const Number = ({ label, name, ...rest }: TextType) => {
 	return (
-
 		<Field
 			className={style.input}
 			name={name}
@@ -20,12 +19,11 @@ const Text = ({ label, name, ...rest }: TextType) => {
 					<>
 						<div className="relative z-0">
 							<input
-								type="text"
+								type="tel"
 								value={field.value}
 								{...field}
 								className={style.input}
-								placeholder=""
-                autoComplete='off'
+								placeholder=" "
 							/>
 							<label
 								htmlFor={label}
@@ -41,4 +39,4 @@ const Text = ({ label, name, ...rest }: TextType) => {
 	);
 };
 
-export default Text;
+export default Number;

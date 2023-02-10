@@ -7,7 +7,7 @@ import Select from './Select';
 import Radio from './Radio';
 import Checkbox from './Checkbox';
 import Switch from './Switch';
-import Autocomplete from '@UICOMPONENTS/inputs/Autocomplete';
+import Autocomplete from './Autocomplete';
 
 type InputType = {
 	inputType: 'text' | 'number' | 'email' |  'password' | 'textarea' | 'select' | 'autocomplete' | 'radio' | 'checkbox' | 'switch' ;

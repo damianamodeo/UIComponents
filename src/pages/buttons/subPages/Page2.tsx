@@ -3,7 +3,7 @@ import Header from '@UICOMPONENTS/containers/Header';
 import Button from '@UICOMPONENTS/inputs/Button';
 import { useState } from 'react';
 
-const header = () => {
+const headerComponent = () => {
 	return (
 		<Header
 			headerLeft="Left 2"
@@ -13,7 +13,7 @@ const header = () => {
 	);
 };
 
-const content2 = ({ setCurrentSubpage }: any) => {
+const contentComponent = ({ setCurrentSubpage }: any) => {
 
 	const [state, setState] = useState(false)
 	
@@ -49,6 +49,6 @@ const content2 = ({ setCurrentSubpage }: any) => {
 	);
 };
 
-const pageOne = { header, content2 };
+const pageOne = { headerComponent, contentComponent };
 
 export default pageOne;

@@ -117,12 +117,6 @@ const Inputs = ({ children }: InputsType) => {
 						LongPress Button
 					</Button>
 
-					{/* <Button
-						submit
-						color="grey"
-					>
-						Submit
-					</Button> */}
 				</div>
 			</FormikForm>
 		</div>

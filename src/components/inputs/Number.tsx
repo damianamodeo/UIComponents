@@ -10,33 +10,33 @@ type TextType = {
 const Number = ({ label, name, ...rest }: TextType) => {
 	return (
 		<Field
-		className={style.input}
-		name={name}
-		{...rest}
-	>
-		{({ field }: any) => {
-			return (
-				<>
-					<div className="relative z-0">
-						<input
-							type="tel"
-							value={field.value}
-							{...field}
-							className={style.input}
-							placeholder=" "
-						/>
-						<label
-							htmlFor={label}
-							className={style.label}
-						>
-							{label}
-						</label>
-					</div>
-				</>
-			);
-		}}
-	</Field>
+			className={style.input}
+			name={name}
+			{...rest}
+		>
+			{({ field }: any) => {
+				return (
+					<>
+						<div className="relative z-0">
+							<input
+								type="tel"
+								value={field.value}
+								{...field}
+								className={style.input}
+								placeholder=" "
+							/>
+							<label
+								htmlFor={label}
+								className={style.label}
+							>
+								{label}
+							</label>
+						</div>
+					</>
+				);
+			}}
+		</Field>
 	);
 };
 
-export default Number
+export default Number;

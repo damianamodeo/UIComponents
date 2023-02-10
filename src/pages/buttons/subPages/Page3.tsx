@@ -6,7 +6,7 @@ import Modal from '../../../components/containers/Modal';
 import Button from '../../../components/inputs/Button';
 import { useState } from 'react';
 
-const header = () => {
+const headerComponent = () => {
 	return (
 		<Header
 			headerLeft={
@@ -25,7 +25,7 @@ const header = () => {
 	);
 };
 
-const content2 = ({ setCurrentSubpage }: any) => {
+const contentComponent = ({ setCurrentSubpage }: any) => {
 	const [modalState, setModalState] = useState(false);
 
 	return (
@@ -148,6 +148,6 @@ const content2 = ({ setCurrentSubpage }: any) => {
 		</Content>
 	);
 };
-const pageThree = { header, content2 };
+const pageThree = { headerComponent, contentComponent };
 
 export default pageThree;
