@@ -5,14 +5,9 @@ type ButtonType = {
 	children: string;
 	clickAction?: any;
 	longPressAction?: any;
-	color:
-		| 'primary'
-		| 'secondary'
-		| 'grey'
-		| 'error'
-		| 'warning'
-		| 'success';
+	color: 'primary' | 'secondary' | 'grey' | 'error' | 'warning' | 'success';
 	delay?: number;
+	submit?: boolean;
 };
 
 const Button = ({
@@ -21,6 +16,7 @@ const Button = ({
 	children,
 	color,
 	delay,
+	submit,
 }: ButtonType) => {
 	const submitRef = useRef(document.createElement('button'));
 
@@ -33,24 +29,20 @@ const Button = ({
 	};
 
 	const onLongPress = () => {
-		if (longPressAction === "submit") {
-			submitRef.current.click();
-			return;
-		}
 		if (longPressAction) {
 			longPressAction();
-			return;
+		}
+		if (submit) {
+			submitRef.current.click();
 		}
 	};
 
 	const onClick = () => {
-		if (clickAction === "submit") {
-			submitRef.current.click();
-			return;
-		}
 		if (clickAction) {
 			clickAction();
-			return;
+		}
+		if (submit) {
+			submitRef.current.click();
 		}
 	};
 
