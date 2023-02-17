@@ -40,7 +40,7 @@ const Page = ({ subPages, currentPage }: PageType) => {
 		modal: boolean,
 		modalContent: any
 	) => {
-		newPage && setPage(newPage);
+		setPage(newPage);
 		direction && setDirection(direction);
 		modal !== undefined && setModal(modal);
 		modalContent && setModalContent(modalContent);
