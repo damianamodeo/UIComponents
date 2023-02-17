@@ -13,7 +13,7 @@ const Modal = ({ children }: ModalType) => {
     >
       <div
         className={`
-          text-center bg-white m-auto rounded-xl 
+          bg-white m-auto rounded-xl 
           h-full w-full overflow-auto drop-shadow-lg
           border-[.5px] border-grey-200 
           dark:bg-darkGrey-700 dark:border-darkGrey-300 
