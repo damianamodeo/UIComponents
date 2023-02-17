@@ -8,7 +8,7 @@ const Modal = ({ children }: ModalType) => {
   return (
     <div
       className={`
-        fixed top-0 left-0 w-screen z-50 h-screen backdrop-blur-sm py-16 px-4
+        fixed top-0 left-0 w-screen z-50 h-screen backdrop-blur-sm backdrop-brightness-75 py-16 px-4
         `}
     >
       <div
