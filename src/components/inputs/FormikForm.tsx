@@ -29,6 +29,7 @@ const FormikForm = ({
 				validationSchema={validationSchema}
 				validateOnChange={!validateOnChange}
 				validateOnBlur={!validateOnBlur} 
+        enableReinitialize
 			>
 				{(formik) => <Form onChange={e=>onChange(e)}>{children}</Form>}
 			</Formik>
